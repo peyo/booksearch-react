@@ -3,38 +3,13 @@ import "./SearchBar.css";
 import SearchBook from "../a2-SearchBook/SearchBook"
 import SearchFilter from "../a2-SearchFilter/SearchFilter"
 
-class SearchBar extends React.Component {
-  state = {
-    filter: "",
-    printType: ""
-  };
-
-    updateBookType(filter) {
-    if (filter !== undefined) {
-      return (
-        this.setState({
-          filter: filter
-        })
-      );
-    } return (null);
-  }
-
-  updatePrintType(printType) {
-    if (printType !== undefined) {
-      return (
-        this.setState({
-          printType: printType
-        })
-      );
-    } return (null);
-  }
-
+class SearchBar extends React.Component {  
   render() {
     const {
       bookData,
       filter,
       printType
-    } = this.state;
+    } = this.props;
 
     return (
       <div className="SearchBar__controls">
@@ -43,8 +18,8 @@ class SearchBar extends React.Component {
           filter={filter}
           printType={printType} />
         <SearchFilter
-          handlePrintFilterChange={filter => this.updateBookType(filter)}
-          handleBookFilterChange={printType => this.updateBookType(printType)} />
+          filter={filter}
+          printType={printType} />
       </div>
     );
   }

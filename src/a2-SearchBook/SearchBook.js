@@ -13,13 +13,9 @@ class SearchBook extends React.Component {
   };
 
   updateSearchTerm(term) {
-    if (term !== undefined) {
-      return (
-        this.setState({
-          q: term
-        })
-      );
-    } return (null);
+    this.setState({
+      q: term
+    })
   }
 
   formatQueryParams(params) {
@@ -83,7 +79,7 @@ class SearchBook extends React.Component {
             onChange={event => this.updateSearchTerm(event.target.value)}/>
           <button
             className="search-button"
-            onClick={event => this.updateSearchTerm(event.target.value)}>
+            onClick={event => this.handleSubmit(event)}>
             Search
           </button>
         </form>
