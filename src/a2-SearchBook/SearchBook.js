@@ -2,14 +2,14 @@ import React from "react";
 import "./SearchBook.css";
 
 class SearchBook extends React.Component {
-  state = {
-    q: "",
-    bookData: {}
-  };
-
   static defaultProps = {
     filter: "",
     printType: "",
+  };
+
+  state = {
+    q: "",
+    bookData: {}
   };
 
   updateSearchTerm(term) {
