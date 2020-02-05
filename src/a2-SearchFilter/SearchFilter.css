@@ -1,0 +1,24 @@
+.SearchFilter-controls {
+  text-align: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 12px;
+}
+
+.print-label {
+  margin: 0 0 0 24px;
+}
+
+.print-select {
+  margin: 0 24px 0 3px;
+  width: 120px;
+}
+
+.book-label {
+  margin: 0 0 0 24px;
+}
+
+.book-select {
+  margin: 0 24px 0 3px;
+  width: 120px;
+}

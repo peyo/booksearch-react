@@ -1,0 +1,8 @@
+.BookItem {
+  padding: 6%;
+  font-size: small;
+}
+
+hr { 
+  border-top: 3px double #8c8b8b;
+}

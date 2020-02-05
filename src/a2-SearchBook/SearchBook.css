@@ -1,0 +1,22 @@
+.SearchBook-controls {
+  border-top: 1px solid black;
+  padding: 12px;
+  text-align: center;
+}
+
+.search-input {
+  margin: 0 0 0 3px;
+  padding: 6px;
+  border: 1px solid black;
+  border-radius: 9px;
+  width: 180px;
+}
+
+.search-button {
+  margin: 0 0 0 3px;
+  padding: 6px;
+  border: 1px solid black;
+  border-radius: 9px;
+  background-color: grey;
+  color: white;
+}
