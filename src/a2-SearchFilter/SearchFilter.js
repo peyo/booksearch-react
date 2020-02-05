@@ -6,7 +6,8 @@ class SearchFilter extends React.Component {
     const {
       handlePrintTypeChange,
       handleBookTypeChange,
-      value
+      printType,
+      filter
     } = this.props;
     
     return (
@@ -18,8 +19,8 @@ class SearchFilter extends React.Component {
           </label>
           <select
             className="print-select"
-            value={value}
-            onChange={handlePrintTypeChange}>
+            value={printType}
+            onChange={e => handlePrintTypeChange(e.target.value)}>
             <option value="none">Select One</option>
             <option value="none">None</option>
             <option value="all">All</option>
@@ -31,8 +32,8 @@ class SearchFilter extends React.Component {
             htmlFor="book-type">Book Type:
           </label>
           <select className="book-select"
-            value={value}
-            onChange={handleBookTypeChange}>
+            value={filter}
+            onChange={e => handleBookTypeChange (e.target.value)}>
             <option value="none">Select One</option>
             <option value="none">None</option>
             <option value="ebooks">e-Books</option>

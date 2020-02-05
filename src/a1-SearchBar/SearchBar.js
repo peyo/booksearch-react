@@ -9,8 +9,6 @@ class SearchBar extends React.Component {
     printType: ""
   };
 
-  // START - For SearchFilter
-
   updatePrintType(value) {
     this.setState({
       printType: value
