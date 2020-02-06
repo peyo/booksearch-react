@@ -5,7 +5,7 @@ import BookList from "./b1-BookList/BookList";
 
 class App extends React.Component {  
   state = {
-    q: "",
+    q: null,
     printType: null,
     filter: null,
     bookData: null
