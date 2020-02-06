@@ -1,8 +1,16 @@
-.BookItem {
-  padding: 6%;
+.BookItem-wrapper {
   font-size: small;
+  padding: 3%;
 }
 
 hr { 
   border-top: 3px double #8c8b8b;
+}
+
+.bookcover {
+  margin: 0 0 15px 0;
+}
+
+.bookcover, .title, .authors, .buyLink, .description {
+  margin: 6px;
 }

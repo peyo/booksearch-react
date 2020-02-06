@@ -4,19 +4,16 @@ import BookItem from "../b2-BookItem/BookItem";
 
 class BookList extends React.Component {
   render() {
-    // const bookItem = this.props.items.map(item => <BookItem {...item}/>)
+    const { bookData } = this.props;
+    const items = bookData.items
+    const bookItem = items.map((item, index) => <BookItem {...item} key={index} />)
 
     return (
       <div className="BookList">
-        {/*{bookItem}*/}
-        <BookItem />
+        {bookItem}
       </div>
     );
   }
-}
-
-BookItem.defaultProps = {
-  items: []
 }
 
 export default BookList;

@@ -4,9 +4,9 @@ import "./SearchFilter.css";
 class SearchFilter extends React.Component {  
   render() {
     const {
+      value,
       handlePrintTypeChange,
-      handleBookTypeChange,
-      value
+      handleBookTypeChange
     } = this.props;
     
     return (
@@ -20,8 +20,8 @@ class SearchFilter extends React.Component {
             className="print-select"
             value={value}
             onChange={e => handlePrintTypeChange(e.target.value)}>
-            <option value="none">Select One</option>
-            <option value="none">None</option>
+            <option value="null">Select One</option>
+            <option value="null">None</option>
             <option value="all">All</option>
             <option value="books">Books</option>
             <option value="magazines">Magazines</option>
@@ -33,8 +33,8 @@ class SearchFilter extends React.Component {
           <select className="book-select"
             value={value}
             onChange={e => handleBookTypeChange (e.target.value)}>
-            <option value="none">Select One</option>
-            <option value="none">None</option>
+            <option value="null">Select One</option>
+            <option value="null">None</option>
             <option value="ebooks">e-Books</option>
             <option value="free-ebooks">Free e-Books</option>
             <option value="full">Full book</option>

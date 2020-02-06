@@ -1,25 +1,32 @@
 import React from "react";
 import "./BookItem.css";
 
-class BookItem extends React.Component {  
+class BookItem extends React.Component {    
   render() {
+    const author = this.props.volumeInfo.authors
+      ? this.props.volumeInfo.authors
+      : "There's no author for this book. 🤷‍♂"
+    
+    const description = this.props.volumeInfo.description
+      ? this.props.volumeInfo.description
+      : "There's no description for this book. 🤷‍♂"
+
     return (
       <div className="BookItem">
-        <div className="BookItem-image">
-          <div className="bookcover">Cover{/*{this.props.volumeInfo.imageLinks.thumbnail} */}</div>
-        </div>
-        <div className="BookItem-text">
-          <div className="title">Title: {/*{this.props.volumeInfo.title} */}</div>
-          <div className="authors">Author(s): {/*{this.props.volumeInfo.authors}*/}</div>
-          <div className="averageRating">Average Rating: {/*{this.props.volumeInfo.averageRating}*/}</div>
-          <div className="ratingsCount">Ratings Count: {/*{this.props.volumeInfo.ratingsCount}*/}</div>
-          <div className="buyLink">
-            <a href="{/*{this.props.salesInfo.buyLink}*/}">Buy Now</a>
+        <div className="BookItem-wrapper">
+          <div className="BookItem-image">
+            <div className="bookcover"><img src={this.props.volumeInfo.imageLinks.thumbnail} alt="book cover."/></div>
           </div>
-          <div className="amount">Amount: {/* {this.props.salesInfo.amount}*/}</div>
-          <div className="description">Description: {/* {this.props.salesInfo.description}*/}</div>
-          <hr />
+          <div className="BookItem-text">
+            <div className="title"><b>Title:</b> {this.props.volumeInfo.title}</div>
+            <div className="authors"><b>Author(s):</b> {author}</div>
+            <div className="buyLink">
+              <a href={this.props.saleInfo.buyLink} alt="link to buy book." target="_blank" rel="noopener noreferrer">Buy Now</a>
+            </div>
+            <div className="description"><b>Description:</b> {description}</div>
+          </div>
         </div>
+        <hr />
       </div>
     );
   }
