@@ -1,0 +1,15 @@
+.BookList-button-div {
+  margin: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.BookList-button {
+  margin: 6px;
+  padding: 6px;
+  border: 1px solid black;
+  border-radius: 9px;
+  background-color: grey;
+  color: white;
+}

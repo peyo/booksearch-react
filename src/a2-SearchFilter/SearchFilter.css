@@ -5,20 +5,19 @@
   padding: 12px;
 }
 
-.print-label {
-  margin: 0 0 0 24px;
+@media only screen and (max-width: 560px) {
+  .SearchFilter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .print-label, .book-label {
+    margin: 12px 0 12px 0;
+  }
 }
 
-.print-select {
-  margin: 0 24px 0 3px;
-  width: 120px;
-}
-
-.book-label {
-  margin: 0 0 0 24px;
-}
-
-.book-select {
-  margin: 0 24px 0 3px;
+.print-select, .book-select {
+  margin: 0 24px 0 24px;
   width: 120px;
 }

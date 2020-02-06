@@ -8,8 +8,25 @@ class App extends React.Component {
     q: null,
     printType: null,
     filter: null,
-    bookData: null
+    bookData: null,
+    startIndex: 0
   };
+
+  updateStartIndexForward() {
+    const newStart = this.state.startIndex + 10
+    this.setState({
+      startIndex: newStart
+    })
+    this.updateSubmit(null, newStart)
+  }
+
+  updateStartIndexBackward() {
+    const newStart = this.state.startIndex - 10
+    this.setState({
+      startIndex: newStart
+    })
+    this.updateSubmit(null, newStart)
+  }
 
   // (START) UPDATING PARAMETERS
   // from searchbook.js
@@ -41,29 +58,30 @@ class App extends React.Component {
     return queryItems.join('&');
   }
 
-  updateSubmit(event) {
-    event.preventDefault();
+  updateSubmit(event, startIndex = 0) {
+    if (event) {
+      event.preventDefault();
+    }
 
     const endPoint = "https://www.googleapis.com/books/v1/volumes";
 
-    const printTypeParam = this.state.printType
-      ? printType: this.state.printType
-      : null
-
-    const filterParam = this.state.filter
-      ? filter: this.state.filter
-      : null
-    
     const bookParams = {
       q: this.state.q,
-      printTypeParam,
-      filterParam,
-      key: "AIzaSyBiEL2F_VV6f1BRNPNkjsC0kIUvjCvWuAA",
+      startIndex: startIndex,
+      key: "AIzaSyBiEL2F_VV6f1BRNPNkjsC0kIUvjCvWuAA"
     };
+
+    // only add these properties if they exist in state
+    if (this.state.printType) {
+      bookParams.printType = this.state.printType;
+    }
+    
+    if (this.state.filter) {
+      bookParams.filter = this.state.filter;
+    }
 
     const bookAPIKeyString = this.formatQueryParams(bookParams);
     const bookURL = endPoint + "?" + bookAPIKeyString;
-    console.log(bookURL)
 
     fetch(bookURL)
       .then(response => {
@@ -74,7 +92,6 @@ class App extends React.Component {
       })
       .then(response => response.json())
       .then(bookData => {
-        console.log(bookData);
         this.setState({
           bookData
         })
@@ -84,12 +101,9 @@ class App extends React.Component {
   
   render() {
     const {
-      bookData
+      bookData,
+      startIndex
     } = this.state;
-
-    const books = bookData
-      ? <BookList bookData={bookData} />
-      : <div className="book-search-something">Try searching for something.</div>
 
     return (
       <main className="App">
@@ -99,7 +113,11 @@ class App extends React.Component {
           handleSearchTerm={q => this.updateSearchTerm(q)}
           handlePrintTypeChange={value => this.updatePrintType(value)}
           handleBookTypeChange={value => this.updateBookType(value)} />
-        {books}
+        <BookList
+          startIndex={startIndex}
+          bookData={bookData}
+          updateStartIndexForward={() => this.updateStartIndexForward()}
+          updateStartIndexBackward={() => this.updateStartIndexBackward()} />
       </main>
     );
   }

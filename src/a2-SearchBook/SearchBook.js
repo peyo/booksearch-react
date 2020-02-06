@@ -11,7 +11,7 @@ class SearchBook extends React.Component {
 
     return (
       <div className="SearchBook-controls">
-        <form onSubmit={event => handleSubmit(event)}>
+        <form className="SearchBook-form" onSubmit={event => handleSubmit(event)}>
           <label
             className="search-label"
             htmlFor="search-type">Search:
