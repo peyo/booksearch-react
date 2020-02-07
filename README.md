@@ -1,4 +1,4 @@
-## Objective and General Info About the App
+## BookSearch App
 
 Search for a book by title, author, subject, etc. using Google's Book API.
 
