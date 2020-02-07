@@ -2,7 +2,7 @@
 
 Search for books by title, author, subject, etc. using Google's Book API.
 
-## Objective and General Info About the App
+## Objective and General Info
 
 - Challenge: Build a book search app using Google's Book API.
 - Some features using API parameters: pagination (startIndex), filtering (filter, printType), and search (q).
