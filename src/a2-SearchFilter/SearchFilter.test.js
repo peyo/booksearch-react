@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import SearchFilter from "../a1-SearchBar/SearchBar";
+import SearchFilter from "./SearchBar";
 
 describe("SearchFilter component", () => {
   it("renders without crashing", () => {

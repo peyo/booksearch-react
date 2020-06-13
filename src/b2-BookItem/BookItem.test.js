@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import BookItem from "../b1-BookList/BookList";
+import BookItem from "./BookItem";
 
 describe("BookItem component", () => {
   it("renders without crashing", () => {

@@ -58,7 +58,14 @@ class App extends React.Component {
     return queryItems.join('&');
   }
 
-  updateSubmit(event, startIndex = 0) {
+  searchBooks(event) {
+    this.setState({
+      startIndex: 0
+    })
+    this.updateSubmit(event, 0)
+  }
+
+  updateSubmit(event, startIndex) {
     if (event) {
       event.preventDefault();
     }
@@ -109,7 +116,7 @@ class App extends React.Component {
       <main className="App">
         <header id="header">Google Book Search</header>
         <SearchBar
-          handleSubmit={event => this.updateSubmit(event)}
+          handleSubmit={event => this.searchBooks(event)}
           handleSearchTerm={q => this.updateSearchTerm(q)}
           handlePrintTypeChange={value => this.updatePrintType(value)}
           handleBookTypeChange={value => this.updateBookType(value)} />

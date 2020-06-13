@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import SearchBook from "../a1-SearchBar/SearchBar";
+import SearchBook from "./SearchBar";
 
 describe("SearchBook component", () => {
   it("renders without crashing", () => {
